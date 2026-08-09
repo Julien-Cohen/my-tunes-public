@@ -223,6 +223,71 @@
     }
     .badge-green a:hover { text-decoration: underline; }
 
+    /* ── FAQ ── */
+    .faq {
+      background: var(--green-light);
+      padding: 4rem 2rem;
+    }
+    .faq h2 {
+      text-align: center;
+      color: var(--green);
+      font-weight: 500;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+    .faq-list {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    details {
+      background: #fff;
+      border: 0.5px solid var(--green-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.25rem;
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--green-dark);
+      cursor: pointer;
+      list-style: none;
+      gap: 1rem;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+';
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+    details[open] summary::after {
+      transform: rotate(45deg);
+    }
+    details[open] summary {
+      border-bottom: 0.5px solid var(--green-border);
+    }
+    .faq-answer {
+      padding: 1rem 1.25rem;
+      font-size: .875rem;
+      color: #555;
+      line-height: 1.75;
+    }
+    .faq-answer a {
+      color: var(--green);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .faq-answer a:hover { text-decoration: underline; }
+
     /* ── Footer ── */
     footer {
       background: var(--green-dark);
@@ -252,6 +317,7 @@
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
     <a href="#download">Download</a>
   </div>
 </nav>
@@ -328,6 +394,55 @@
     <div class="badge">
       ✦ Early Supporter Badge available
     </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <h2>Frequently asked questions</h2>
+  <div class="faq-list">
+
+    <details>
+      <summary>Where does the tune data come from?</summary>
+      <div class="faq-answer">
+        All tunes, settings, and ABC notation are sourced from <a href="https://thesession.org" target="_blank" rel="noopener">thesession.org</a>, the world's largest open archive of Irish traditional music, maintained by a global community of musicians since 1999.
+      </div>
+    </details>
+
+    <details>
+      <summary>Does MyTunes work offline?</summary>
+      <div class="faq-answer">
+        Yes. Once your collection is downloaded, the core app works offline. Only sheet music, audio playback, and audio quiz need an internet connection. Your collections keep available during sessions in places with no signal.
+      </div>
+    </details>
+
+    <details>
+      <summary>Which instruments is it designed for?</summary>
+      <div class="faq-answer">
+        MyTunes is instrument-agnostic: any musician can use it.
+      </div>
+    </details>
+
+    <details>
+      <summary>Is the app free?</summary>
+      <div class="faq-answer">
+        The core app is free to download and use. An optional Supporter Badge is available as an in-app purchase for those who want to support the development of the app.
+      </div>
+    </details>
+
+    <details>
+      <summary>How does the quiz mode work?</summary>
+      <div class="faq-answer">
+        The quiz plays the first notes of a tune and asks you to identify it by name. Answer correctly on the first attempt and you earn a gold star. There also other kinds of quiz that help learning.
+      </div>
+    </details>
+
+    <details>
+      <summary>Which platforms are supported?</summary>
+      <div class="faq-answer">
+        MyTunes is available on iOS (iPhone and iPad) and Android. Both versions are built from the same codebase and receive updates simultaneously.
+      </div>
+    </details>
+
   </div>
 </section>
 
