@@ -7,300 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --green:       #1e7a3d;
-      --green-dark:  #155a2e;
-      --green-light: #e8f5ed;
-      --green-border:#c3dfc9;
-      --gold:        #c9a86a;
-      --gold-dark:   #a88847;
-      --gold-light:  #fdf6ec;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--green-light);
-      color: #1a1a1a;
-    }
-
-    /* ── Nav ── */
-    nav {
-      background: var(--green);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      font-weight: 500;
-      font-size: 1.1rem;
-      text-decoration: none;
-    }
-    .nav-logo svg { fill: var(--gold); }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a {
-      color: rgba(255,255,255,.82);
-      text-decoration: none;
-      font-size: .875rem;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--gold); }
-
-    /* ── Hero ── */
-    .hero {
-      background: var(--green);
-      color: #fff;
-      padding: 5rem 2rem 6rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(1.6rem, 4vw, 2.75rem);
-      font-weight: 500;
-      line-height: 1.35;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1rem;
-      color: rgba(255,255,255,.78);
-      max-width: 540px;
-      margin: 0 auto 1.25rem;
-      line-height: 1.75;
-    }
-    .hero-source {
-      font-size: .85rem;
-      color: rgba(255,255,255,.55);
-      margin: 0 auto 2rem;
-    }
-    .hero-source a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .hero-source a:hover { text-decoration: underline; }
-    .btn-row { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
-    .btn-gold {
-      background: var(--gold);
-      color: #3d2800;
-      border: none;
-      padding: .75rem 2rem;
-      border-radius: 8px;
-      font-size: .9rem;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background .2s;
-    }
-    .btn-gold:hover { background: var(--gold-dark); color: #fff; }
-    .btn-ghost {
-      background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.45);
-      padding: .75rem 2rem;
-      border-radius: 8px;
-      font-size: .9rem;
-      cursor: pointer;
-      text-decoration: none;
-      transition: border-color .2s;
-    }
-    .btn-ghost:hover { border-color: rgba(255,255,255,.9); }
-
-    /* ── Source banner ── */
-    .source-banner {
-      background: var(--gold-light);
-      border-top: 1px solid var(--gold);
-      border-bottom: 1px solid var(--gold);
-      padding: .9rem 2rem;
-      text-align: center;
-      font-size: .875rem;
-      color: var(--gold-dark);
-    }
-    .source-banner a {
-      color: var(--green);
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .source-banner a:hover { text-decoration: underline; }
-
-    /* ── Features ── */
-    .features {
-      background: var(--green-light);
-      padding: 4rem 2rem;
-    }
-    .features h2 {
-      text-align: center;
-      color: var(--green);
-      font-weight: 500;
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      border: 0.5px solid var(--green-border);
-    }
-    .card-icon {
-      width: 42px;
-      height: 42px;
-      background: var(--green);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-    .card-icon svg { stroke: var(--gold); fill: none; width: 20px; height: 20px; }
-    .card h3 { color: var(--green-dark); font-size: .95rem; font-weight: 500; margin-bottom: .35rem; }
-    .card p  { color: #555; font-size: .85rem; line-height: 1.65; }
-
-    /* ── About ── */
-    .about {
-      background: #fff;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .about h2 {
-      color: var(--green);
-      font-size: 1.4rem;
-      font-weight: 500;
-      margin-bottom: .75rem;
-    }
-    .about p {
-      color: #555;
-      font-size: .95rem;
-      max-width: 580px;
-      margin: 0 auto 1rem;
-      line-height: 1.75;
-    }
-    .about p + p { margin-top: .75rem; }
-    .about a {
-      color: var(--green);
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .about a:hover { text-decoration: underline; }
-    .badge-row { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--gold-light);
-      color: var(--gold-dark);
-      border: 1px solid var(--gold);
-      border-radius: 100px;
-      padding: .35rem 1.1rem;
-      font-size: .85rem;
-    }
-    .badge-green {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--green-light);
-      color: var(--green-dark);
-      border: 1px solid var(--green-border);
-      border-radius: 100px;
-      padding: .35rem 1.1rem;
-      font-size: .85rem;
-    }
-    .badge-green a {
-      color: var(--green);
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .badge-green a:hover { text-decoration: underline; }
-
-    /* ── FAQ ── */
-    .faq {
-      background: var(--green-light);
-      padding: 4rem 2rem;
-    }
-    .faq h2 {
-      text-align: center;
-      color: var(--green);
-      font-weight: 500;
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-    }
-    .faq-list {
-      max-width: 680px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-    }
-    details {
-      background: #fff;
-      border: 0.5px solid var(--green-border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.1rem 1.25rem;
-      font-size: .95rem;
-      font-weight: 500;
-      color: var(--green-dark);
-      cursor: pointer;
-      list-style: none;
-      gap: 1rem;
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary::after {
-      content: '+';
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--gold);
-      flex-shrink: 0;
-      transition: transform .2s;
-    }
-    details[open] summary::after {
-      transform: rotate(45deg);
-    }
-    details[open] summary {
-      border-bottom: 0.5px solid var(--green-border);
-    }
-    .faq-answer {
-      padding: 1rem 1.25rem;
-      font-size: .875rem;
-      color: #555;
-      line-height: 1.75;
-    }
-    .faq-answer a {
-      color: var(--green);
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .faq-answer a:hover { text-decoration: underline; }
-
-    /* ── Footer ── */
-    footer {
-      background: var(--green-dark);
-      color: rgba(255,255,255,.6);
-      text-align: center;
-      padding: 1.5rem 2rem;
-      font-size: .8rem;
-      line-height: 1.8;
-    }
-    footer span { color: var(--gold); }
-    footer a { color: rgba(255,255,255,.55); text-decoration: none; }
-    footer a:hover { color: var(--gold); }
-  </style>
+  <link rel="stylesheet" href="mystyle.css" />
 </head>
 <body>
 
@@ -319,17 +26,44 @@
     <a href="#about">About</a>
     <a href="#faq">FAQ</a>
     <a href="#download">Download</a>
+    <a href="#privacy">Privacy</a>
   </div>
 </nav>
 
 <section class="hero" id="download">
-  <h1>Your Irish &amp; folk music collection,<br>beautifully organised</h1>
-  <p>Browse, learn, and play thousands of traditional tunes with sheet music notation, audio playback, and a smart quiz to sharpen your memory.</p>
+  <img src="icon.png" alt="MyTunes app icon"  width="128" height="128">
+  <h1>Your Irish &amp; trad music collection,<br>in your pocket</h1> 
+  <p>Organize your tunes into collections and take quizzes to help you learn.</p>
+
+  <div class="feature-list">
+    <p>With MyTunes you can:
+      <ul>
+        <li>Create collections of tunes. Examples: To practice, Favourites, Local Session.</li>
+        <li>Add tunes and find their reference on TheSession.org.</li>
+        <li>Take quizzes on a collection to help you learn the tunes.</li>
+        <li>Share collections of tunes.</li>
+        <li>Personalise tune information such as the key or a favorite recording.</li>
+      </ul>
+    </div>
+  </p>
   <p class="hero-source">Tune data sourced from <a href="https://thesession.org" target="_blank" rel="noopener">thesession.org</a> — the world's largest community for Irish traditional music.</p>
+
+   
+  <p>
+    <div class="feature-list">
+    Also:
+      <ul>
+      <li>No ads.</li>
+      <li>No account needed.</li>
+      <li>You own your data.</li>
+      </ul>
+    </div>
+  </p>
   <div class="btn-row">
-    <a href="#" class="btn-gold">Download on iOS</a>
-    <a href="#" class="btn-ghost">Get it on Android</a>
+    <a href="https://apps.apple.com/us/app/mytunes/id6798656543" class="btn-gold">Get it on iOS</a>
+    <a href="https://play.google.com/store/apps/details?id=com.juliencoapps.mytunes" class="btn-gold">Get it on Android</a>
   </div>
+  
 </section>
 
 <div class="source-banner">
@@ -347,7 +81,7 @@
         </svg>
       </div>
       <h3>Tune library</h3>
-      <p>Browse and search jigs, reels, hornpipes, and more — sourced directly from thesession.org.</p>
+      <p>Browse and organize your jigs, reels, hornpipes, and more,  sourced directly from thesession.org.</p>
     </div>
 
     <div class="card">
@@ -357,7 +91,7 @@
         </svg>
       </div>
       <h3>Audio playback</h3>
-      <p>Hear any tune played back with synthesised audio powered by ABC notation.</p>
+      <p>Hear the opening of any tune played back with synthesised audio based on the ABC notation.</p>
     </div>
 
     <div class="card">
@@ -377,7 +111,7 @@
         </svg>
       </div>
       <h3>Dark mode</h3>
-      <p>Full light and dark theme support — easy on the eyes at late-night sessions.</p>
+      <p>Full light and dark theme support,  easy on the eyes at late-night sessions.</p>
     </div>
 
   </div>
@@ -385,8 +119,9 @@
 
 <section class="about" id="about">
   <h2>Built for the session</h2>
-  <p>MyTunes is an iOS and Android app for traditional Irish and folk musicians who want a beautiful, offline-ready tune companion to bring to every session.</p>
-  <p>All tune data — settings, ABC notation, recordings, and aliases — comes from <a href="https://thesession.org" target="_blank" rel="noopener">thesession.org</a>, the open community archive that has been collecting and curating Irish traditional music since 1999.</p>
+  <p>MyTunes is an iOS and Android app for traditional Irish and folk musicians who want an offline-ready tune companion to bring to every session.</p>
+  <p>Important tune data (settings, ABC notation) comes from <a href="https://thesession.org" target="_blank" rel="noopener">thesession.org</a>, the open community archive that collects Irish traditional music.</p>
+  <p>Personal data can also be added: personal notes, favourite recording...</p>
   <div class="badge-row">
     <div class="badge-green">
       Data from <a href="https://thesession.org" target="_blank" rel="noopener">thesession.org</a>
@@ -404,14 +139,14 @@
     <details>
       <summary>Where does the tune data come from?</summary>
       <div class="faq-answer">
-        All tunes, settings, and ABC notation are sourced from <a href="https://thesession.org" target="_blank" rel="noopener">thesession.org</a>, the world's largest open archive of Irish traditional music, maintained by a global community of musicians since 1999.
+        All settings and ABC notation are sourced from <a href="https://thesession.org" target="_blank" rel="noopener">thesession.org</a>.
       </div>
     </details>
 
     <details>
       <summary>Does MyTunes work offline?</summary>
       <div class="faq-answer">
-        Yes. Once your collection is downloaded, the core app works offline. Only sheet music, audio playback, and audio quiz need an internet connection. Your collections keep available during sessions in places with no signal.
+        Yes. Once your collection is built, the core app works offline. Only sheet music, audio playback, and audio quiz need an internet connection. Your collections keep available during sessions in places with no signal.
       </div>
     </details>
 
@@ -425,14 +160,14 @@
     <details>
       <summary>Is the app free?</summary>
       <div class="faq-answer">
-        The core app is free to download and use. An optional Supporter Badge is available as an in-app purchase for those who want to support the development of the app.
+        The core app is free to download and use. An optional Supporter Badge is available as an in-app purchase. This unlocks unlimited collections in the app.
       </div>
     </details>
 
     <details>
       <summary>How does the quiz mode work?</summary>
       <div class="faq-answer">
-        The quiz plays the first notes of a tune and asks you to identify it by name. Answer correctly on the first attempt and you earn a gold star. There also other kinds of quiz that help learning.
+        The quiz plays the first notes of a tune and asks you to identify it by name. Answer correctly on the first attempt and you earn a star. There also other kinds of quiz that help you learn.
       </div>
     </details>
 
@@ -444,6 +179,18 @@
     </details>
 
   </div>
+</section>
+
+<section class = "about" id="privacy">
+  <h2>Privacy Policy</h2>
+  <p>This application does not collect your personal data.</p>
+
+  <p>If you installed this application from Google Play, Google may collect some personal data.</p>
+
+  <p>If you installed this application from Apple App Store, Apple may collect some personal data.</p>
+
+  <p>If you connect the app to Google, the app only uses Google Drive to back up or restore your data.</p>
+  
 </section>
 
 <footer>
