@@ -1,5 +1,15 @@
-This application does not collect your personal data.
+This application saves your data locally on your device.
+
+Optionally, you can request a cloud save of your data. In this case, your data is stored on Google's servers in France. We don't sell your data to any company.
+
+If you use the cloud backup, your Google identifier is stored with all your collection data. Your account name and e-mail are received from Google and we don't store them.
 
 If you installed this application from Google Play, then Google may collect some personal data. 
 
 If you installed this application from Apple App Store, Apple may collect some personal data.
+
+If you purchase some product from the application, the purchase is processed by Google Play Store or Apple App Store under their own privacy terms.
+
+If you want your data to be deleted from our cloud servers, send a request to julienco.apps@gmail.com .
+
+If you need further information, contact julienco.apps@gmail.com .
