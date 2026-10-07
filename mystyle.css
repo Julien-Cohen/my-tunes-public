@@ -75,9 +75,25 @@ nav {
 }
 .hero-source a:hover { text-decoration: underline; }
 
+.feature-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
 .feature-list {
     text-align: left;
     margin-bottom: 20px;
+    flex: 1;
+}
+
+.hero-screenshot {
+  max-height: 600px;
+  height: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
 }
 
 .btn-row { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; align-items: center; line-height: 1; }
