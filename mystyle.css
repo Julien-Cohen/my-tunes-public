@@ -1,11 +1,14 @@
 :root {
-  --green:       #1e7a3d;
-  --green-dark:  #155a2e;
-  --green-light: #e8f5ed;
-  --green-border:#c3dfc9;
-  --gold:        #c9a86a;
-  --gold-dark:   #a88847;
-  --gold-light:  #fdf6ec;
+  /* Palette tirée du logo */
+  --green:       #14311e;   /* vert forêt du fond du logo */
+  --green-dark:  #0d2216;
+  --green-light: #f6f0df;   /* crème très clair (fonds de page) */
+  --green-border:#e3d6aa;
+  --olive:       #7d9a3b;   /* vert olive de "My" et du noeud celtique */
+  --olive-dark:  #5d7a26;
+  --gold:        #e8d198;   /* crème doré de "Tunes" et des traits */
+  --gold-dark:   #7a6320;   /* version foncée pour texte sur fond clair */
+  --gold-light:  #fbf5e3;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,7 +52,7 @@ nav {
   transition: color .2s;
 }
 .nav-links a:hover { color: var(--gold); }
-.nav-links a.active { color: #fff; font-weight: 500; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+.nav-links a.active { color: var(--gold); font-weight: 500; border-bottom: 2px solid var(--olive); padding-bottom: 2px; }
 
 /* ── Hero ── */
 .hero {
@@ -145,15 +148,15 @@ nav {
 /* ── Source banner ── */
 .source-banner {
   background: var(--gold-light);
-  border-top: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
+  border-top: 1px solid var(--olive);
+  border-bottom: 1px solid var(--olive);
   padding: .9rem 2rem;
   text-align: center;
   font-size: .875rem;
   color: var(--gold-dark);
 }
 .source-banner a {
-  color: var(--green);
+  color: var(--olive-dark);
   font-weight: 500;
   text-decoration: none;
 }
@@ -219,7 +222,7 @@ nav {
 }
 .about p + p { margin-top: .75rem; }
 .about a {
-  color: var(--green);
+  color: var(--olive-dark);
   font-weight: 500;
   text-decoration: none;
 }
@@ -248,7 +251,7 @@ nav {
   font-size: .85rem;
 }
 .badge-green a {
-  color: var(--green);
+  color: var(--olive-dark);
   font-weight: 500;
   text-decoration: none;
 }
@@ -296,7 +299,7 @@ summary::after {
   content: '+';
   font-size: 1.25rem;
   font-weight: 400;
-  color: var(--gold);
+  color: var(--olive);
   flex-shrink: 0;
   transition: transform .2s;
 }
@@ -313,7 +316,7 @@ details[open] summary {
   line-height: 1.75;
 }
 .faq-answer a {
-  color: var(--green);
+  color: var(--olive-dark);
   font-weight: 500;
   text-decoration: none;
 }
@@ -323,6 +326,7 @@ details[open] summary {
 footer {
   margin-top: auto;
   background: var(--green-dark);
+  border-top: 2px solid var(--olive);
   color: rgba(255,255,255,.6);
   text-align: center;
   padding: 1.5rem 2rem;
@@ -375,3 +379,6 @@ footer a:hover { color: var(--gold); }
   }
 }
 #download { scroll-margin-top: 40vh; }
+
+h1, h2, .nav-logo { font-family: Georgia, 'Times New Roman', serif; }
+.hero h1 { color: var(--gold); }
