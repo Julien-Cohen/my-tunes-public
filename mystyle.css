@@ -19,6 +19,8 @@ body {
   background: var(--green-light);
   color: #1a1a1a;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── Nav ── */
@@ -47,6 +49,7 @@ nav {
   transition: color .2s;
 }
 .nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: #fff; font-weight: 500; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
 
 /* ── Hero ── */
 .hero {
@@ -318,6 +321,7 @@ details[open] summary {
 
 /* ── Footer ── */
 footer {
+  margin-top: auto;
   background: var(--green-dark);
   color: rgba(255,255,255,.6);
   text-align: center;
@@ -370,3 +374,4 @@ footer a:hover { color: var(--gold); }
     gap: .5rem 1rem;
   }
 }
+#download { scroll-margin-top: 40vh; }
